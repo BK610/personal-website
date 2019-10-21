@@ -1,9 +1,8 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
+title: Bailey Kane - Title!
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+subheading: Subheading?
 mainpitch:
   title: Why Kaldi
   description: >
