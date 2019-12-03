@@ -1,12 +1,12 @@
 @import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
 
 // My brand colors
-$light-shades: #F6F6F9;
-$light-accent: #B1ABEE;
-$light-accent-darker: #2E22AA;
+$light-shades: #f6f6f9;
+$light-accent: #b1abee;
+$light-accent-darker: #2e22aa;
 $brand-color: #461878;
-$dark-accent: #332B2B;
-$dark-shades: #2C2E3E;
+$dark-accent: #332b2b;
+$dark-shades: #2c2e3e;
 
 // Adjusting Bulma defaults
 $primary: $brand-color;
@@ -22,6 +22,17 @@ $navbar-background-color: $light-shades;
 // Footer
 $footer-background-color: $dark-shades;
 $footer-padding: 3rem 1.5rem 3rem;
+
+.particles-background {
+  position: fixed !important;
+  right: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
 
 @import "../../node_modules/bulma/bulma.sass";
 

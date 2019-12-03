@@ -4,6 +4,7 @@ import "../css/styles.css";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
+import ParticlesBackground from "../components/ParticlesBackground";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
@@ -17,6 +18,9 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div>
+    <div style={{height:"500px"}}>
+      <ParticlesBackground />
+    </div>
     <section className="hero is-light is-fullheight-with-navbar">
       <div className="hero-body">
         <div className="container">
