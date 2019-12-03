@@ -2,6 +2,19 @@
 
 Heyya here's my website. 😃
 
+## My common problems
+
+### Field "image" must not have a selection since type "String" has no subfields
+
+This sucks. GraphQL is having an issue finding an image (wrong directory or similar problem) and defaults to using the path as a string. Then, when it goes to call the image and access subfields for it, we get an error because the "String" type does not have subfields. Big no. Example of this attempted access below.
+
+
+The most helpful resources were:
+
+- [Gatsby Github Issue #13322](https://github.com/gatsbyjs/gatsby/issues/13322)
+- [Gatsby Github Issue #13469](https://github.com/gatsbyjs/gatsby/issues/13469)
+- [Problems with 'gatsby-image' and their workarounds - The Leaky Cauldron](https://theleakycauldronblog.com/blog/problems-with-gatsby-image-and-their-workarounds/)
+
 ## Technologies Used
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
