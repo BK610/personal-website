@@ -1,13 +1,34 @@
 # Bailey Kane, Personal Website
 
-Heyya here's my website. 😃
+The website.
 
 ## My common problems
 
-### Field "image" must not have a selection since type "String" has no subfields
+### 1. Field "image" must not have a selection since type "String" has no subfields
 
 This sucks. GraphQL is having an issue finding an image (wrong directory or similar problem) and defaults to using the path as a string. Then, when it goes to call the image and access subfields for it, we get an error because the "String" type does not have subfields. Big no. Example of this attempted access below.
 
+```graph
+image {
+    childImageSharp {
+        fluid(maxWidth: 2048, quality: 100) {
+            ...GatsbyImageSharpFluid
+        }
+    }
+}
+```
+
+Making two changes helped me with this.
+
+1. Move images that are called via GraphQL into the `static/img` folder. This is what's referenced in `gatsby-config.js`. Which brings me to the second portion of the fix...
+2. The order of plugins and resolve rules in `gatsby-config.js` matters. Specifically, the only order that worked for me is as follows:
+    1. `gatsby-plugin-sharp`
+    2. `gatsby-transformer-sharp`
+    3. Anything with `remark` in the name
+    4. Anything with `gatsby-source-filesystem` in the name
+    5. Everything else
+    6. `gatsby-plugin-purgecss`
+    7. `gatsby-plugin-netlify`
 
 The most helpful resources were:
 
@@ -58,6 +79,7 @@ After clicking that button, you’ll authenticate with GitHub and choose a repos
 ### Access Locally
 
 Pulldown a local copy of the Github repository Netlify created for you, with the name you specified in the previous step
+
 ```
 $ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
 $ cd [REPO_NAME]
@@ -79,22 +101,22 @@ $ netlify dev # or ntl dev
 Media Libraries have been included in this starter as a default. If you are not planning to use `Uploadcare` or `Cloudinary` in your project, you **can** remove them from module import and registration in `src/cms/cms.js`. Here is an example of the lines to comment or remove them your project.
 
 ```javascript
-import CMS from 'netlify-cms-app'
+import CMS from "netlify-cms-app";
 // import uploadcare from 'netlify-cms-media-library-uploadcare'
 // import cloudinary from 'netlify-cms-media-library-cloudinary'
 
-import AboutPagePreview from './preview-templates/AboutPagePreview'
-import BlogPostPreview from './preview-templates/BlogPostPreview'
-import ProductPagePreview from './preview-templates/ProductPagePreview'
-import IndexPagePreview from './preview-templates/IndexPagePreview'
+import AboutPagePreview from "./preview-templates/AboutPagePreview";
+import BlogPostPreview from "./preview-templates/BlogPostPreview";
+import ProductPagePreview from "./preview-templates/ProductPagePreview";
+import IndexPagePreview from "./preview-templates/IndexPagePreview";
 
 // CMS.registerMediaLibrary(uploadcare);
 // CMS.registerMediaLibrary(cloudinary);
 
-CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+CMS.registerPreviewTemplate("index", IndexPagePreview);
+CMS.registerPreviewTemplate("about", AboutPagePreview);
+CMS.registerPreviewTemplate("products", ProductPagePreview);
+CMS.registerPreviewTemplate("blog", BlogPostPreview);
 ```
 
 ## Getting Started (Without Netlify)
@@ -120,7 +142,7 @@ npm config set python python2.7
 npm install --global --production windows-build-tools
 ```
 
-[Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
+[Full details here](https://www.npmjs.com/package/node-gyp "NPM node-gyp page")
 
 MacOS users might also encounter some errors, for more info check [node-gyp](https://github.com/nodejs/node-gyp). We recommend using the latest stable node version.
 
