@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
-title: Bailey Kane - Title!
+title: Bailey Kane - coming soon
 heading: Great coffee with a conscience
-subheading: Subheading?
+subheading: Static websites are cool?
 mainpitch:
   title: Why Kaldi
   description: >

@@ -6,7 +6,7 @@ $light-accent: #b1abee;
 $light-accent-darker: #2e22aa;
 $brand-color: #461878;
 $dark-accent: #332b2b;
-$dark-shades: #2c2e3e;
+$dark-shades: #332b2b;
 
 // Adjusting Bulma defaults
 $primary: $brand-color;
@@ -35,16 +35,3 @@ $footer-padding: 3rem 1.5rem 3rem;
 }
 
 @import "../../node_modules/bulma/bulma.sass";
-
-// responsiveness
-// +tablet-only
-//   .blog-list-item .featured-thumbnail
-//     flex-basis: 50%;
-
-// +mobile
-//   .blog-list-item header
-//     display: block
-//   .blog-list-item .featured-thumbnail
-//     text-align: center;
-//     max-width: 70%;
-//     margin: 0 0 1em;
