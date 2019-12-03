@@ -18,9 +18,10 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div>
+    {/* Particles background attempt:
     <div style={{height:"500px"}}>
       <ParticlesBackground />
-    </div>
+    </div> */}
     <section className="hero is-light is-fullheight-with-navbar">
       <div className="hero-body">
         <div className="container">
