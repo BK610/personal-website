@@ -1,7 +1,8 @@
 ---
 templateKey: index-page
 title: Bailey Kane - coming soon
-heading: Great coffee with a conscience
+image: /img/HeroImage.jpg
+heading: Great guy with a conscience
 subheading: Static websites are cool?
 mainpitch:
   title: Why Kaldi

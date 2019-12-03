@@ -10,6 +10,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
 export const IndexPageTemplate = ({
+  image,
   title,
   heading,
   subheading,
@@ -22,13 +23,20 @@ export const IndexPageTemplate = ({
     <div style={{height:"500px"}}>
       <ParticlesBackground />
     </div> */}
-    <section className="hero is-light is-fullheight-with-navbar">
+    <section className="hero is-light is-fullheight-with-navbar"
+      style={{
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
+        backgroundPosition: `center center`,
+        backgroundSize: `cover`,
+      }}>
       <div className="hero-body">
         <div className="container">
-          <h1 className="has-text-weight-bold has-text-primary is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+          <h1 className="has-text-weight-bold has-text-light is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
             {title}
           </h1>
-          <h3 className="has-text-weight-bold has-text-primary is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
+          <h3 className="has-text-weight-bold has-text-light is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
             {subheading}
           </h3>
         </div>
