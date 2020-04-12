@@ -6,7 +6,7 @@ const Footer = class extends React.Component {
       <footer className="footer has-background-black has-text-white">
         <div className="content has-text-centered">
           <p>
-            Made by me, for me.
+            The all-important footer 🦶
           </p>
         </div>
       </footer>
