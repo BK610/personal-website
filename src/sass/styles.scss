@@ -1,37 +1,33 @@
 @import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
 
-// My brand colors
-$light-shades: #f6f6f9;
-$light-accent: #b1abee;
-$light-accent-darker: #2e22aa;
-$brand-color: #461878;
-$dark-accent: #332b2b;
-$dark-shades: #332b2b;
+// Fonts!
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:ital,wght@0,200;0,400;0,500;1,200;1,400;1,500&display=swap');
+$family-primary: 'Inria Sans', sans-serif;
+$family-secondary: 'Raleway', sans-serif;
 
-// Adjusting Bulma defaults
+// My brand colors
+$light-shades: #f3f6f7;
+$light-accent: #cda9ec;
+// $light-accent: #9d84b3;
+$brand-color: #7038a1;
+// $brand-color: #2E4D2E;
+$dark-accent: #80737b;
+$dark-shades: #100817;
+
+// Adjusting Bulma default colors
 $primary: $brand-color;
 $primary-invert: #fff;
 $black: $dark-shades;
-$link: $light-accent-darker;
-$background: $light-shades;
-$light: $light-shades;
+$white: $light-shades;
+// $link: $light-accent-darker;
+$background: $dark-shades;
+$light: $light-accent;
+$dark: $dark-accent;
 
 // Navbar
-$navbar-background-color: $light-shades;
+$navbar-background-color: $black;
 
 // Footer
-$footer-background-color: $dark-shades;
-$footer-padding: 3rem 1.5rem 3rem;
-
-.particles-background {
-  position: fixed !important;
-  right: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-}
+$footer-padding: 1rem 1.5rem 1rem;
 
 @import "../../node_modules/bulma/bulma.sass";

@@ -4,10 +4,7 @@ import "../css/styles.css";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
-import ParticlesBackground from "../components/ParticlesBackground";
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -19,37 +16,38 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div>
-    {/* Particles background attempt:
-    <div style={{height:"500px"}}>
-      <ParticlesBackground />
-    </div> */}
-    <section className="hero is-light is-fullheight-with-navbar"
+    <section className="hero has-background-black is-fullheight-with-navbar"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `center center`,
+        backgroundPosition: `right center`,
         backgroundSize: `cover`,
       }}>
       <div className="hero-body">
-        <div className="container">
-          <h1 className="has-text-weight-bold has-text-light is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+        <div className="container is-family-secondary">
+          <h1 className="has-text-weight-bold has-text-white is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
             {title}
           </h1>
           <h3 className="has-text-weight-bold has-text-light is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
-            {subheading}
+            <i>
+              {subheading}
+            </i>
           </h3>
         </div>
       </div>
     </section>
-    {/* <section className="section section--gradient">
-      <div className="container">
+    {/* <section className="section has-background-black">
+      <div className="container is-widescreen">
         <div className="section">
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                
+                <p className="has-text-weight-bold has-text-black is-size-3-mobile is-size-4-tablet is-size-3-widescreen">
+                  Content! 
+                </p>
               </div>
+
             </div>
           </div>
         </div>
@@ -119,13 +117,6 @@ export const pageQuery = graphql`
         description
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
             text
           }
           heading
