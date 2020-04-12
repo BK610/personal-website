@@ -1,8 +1,7 @@
 ---
 templateKey: index-page
-title: Hey 👋
 image: /img/HeroImage.png
-heading: Heading
+heading: Hey 👋
 subheading: How are you?
 mainpitch:
   title: Why Kaldi

@@ -8,7 +8,6 @@ import Layout from "../components/Layout";
 
 export const IndexPageTemplate = ({
   image,
-  title,
   heading,
   subheading,
   mainpitch,
@@ -27,7 +26,7 @@ export const IndexPageTemplate = ({
       <div className="hero-body">
         <div className="container is-family-secondary">
           <h1 className="has-text-weight-bold has-text-white is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
-            {title}
+            {heading}
           </h1>
           <h3 className="has-text-weight-bold has-text-light is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
             <i>
@@ -58,7 +57,6 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -75,7 +73,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
@@ -100,7 +97,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
