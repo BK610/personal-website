@@ -53,9 +53,9 @@ const Navbar = class extends React.Component {
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
             >
-              <span />
-              <span />
-              <span />
+              <span/>
+              <span/>
+              <span/>
             </div>
           </div>
           <div
