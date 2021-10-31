@@ -19,13 +19,14 @@ $primary: $brand-color;
 $primary-invert: #fff;
 $black: $dark-shades;
 $white: $light-shades;
-// $link: $light-accent-darker;
+$link: $dark-accent;
 $background: $dark-shades;
 $light: $light-accent;
 $dark: $dark-accent;
 
 // Navbar
 $navbar-background-color: $black;
+$navbar-item-color: $light-accent;
 $navbar-burger-color: $light-accent;
 
 // Footer
